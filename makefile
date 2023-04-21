@@ -1,6 +1,9 @@
 FLAGS := -Wall -lm 
 
-all: graph histogram
+all: graph histogram scatter
+
+scatter: scatter_main.c list.o scatter.o plot_options.o plot.o
+	gcc $^ -o $@ $(FLAGS)
 
 graph: graph_main.c list.o expression.o plot_options.o plot.o graph.o 
 	gcc $^ -o $@ $(FLAGS)
@@ -27,4 +30,7 @@ plot_options.o: plot_options.c plot_options.h
 	gcc -c $< $(FLAGS) 
 
 graph.o: graph.c graph.h
+	gcc -c $< $(FLAGS) 
+
+scatter.o: scatter.c scatter.h
 	gcc -c $< $(FLAGS) 

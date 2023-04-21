@@ -17,8 +17,7 @@
 #include "plot_options.h"
 
 // reads data from the provided input data source (in the plot 
-// options), then constructs the content of the plot. The boolean
-// argument specifies whether or not to use a full-width bar. 
+// options), then constructs the content of the plot. 
 const char** data_to_histogram(hist_options*, plot_options*); 
 
 #endif 
